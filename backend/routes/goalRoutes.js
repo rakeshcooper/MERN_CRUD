@@ -1,33 +1,16 @@
 import express from "express"
+import { getGoals,setGoals, updateGoals, removeGoals } from "../controllers/goalController.js"
 const router = express.Router()
 
-const posts = [
-    {
-        name: "Cooper"
-    },
-    {
-        name: "Rakesh"
-    }
-]
 
 
-router.get('/',(req,res) => {
-    res.status(200).json(posts)
 
-})
+router.get('/', getGoals)
 
-router.post('/',(req,res) => {
-    res.status(200).json(posts)
+router.post('/',setGoals)
 
-})
+router.put('/:id',updateGoals)
 
-router.put('/:id',(req,res) => {
-    res.status(200).json(posts)
-})
-
-router.delete('/:id',(req,res) => {
-    res.status(200).json(posts)
-
-})
+router.delete('/:id',removeGoals)
 
 export default router
