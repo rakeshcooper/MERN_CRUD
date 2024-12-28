@@ -1,4 +1,4 @@
-
+import asyncHandler from "express-async-handler"
 const posts = [
     {
         name: "Cooper"
@@ -11,35 +11,35 @@ const posts = [
 // @desc get goals
 // @route GET /api/goals
 // @access private 
-export const getGoals = (req,res) => {
+export const getGoals = asyncHandler(async(req,res) => {
     res.status(200).json(posts)
-}
+})
 
 // @desc set goals
 // @route POST /api/goals
 // @access private 
-export const setGoals = (req,res) => {
+export const setGoals = asyncHandler(async(req,res) => {
     if(!req.body.text){
         res.status(400)
         throw new Error('Please add a text field')    
     }
     
     res.status(200).json(posts)
-}
+})
 
 // @desc update goals
 // @route PUT /api/goals/:id
 // @access private 
-export const updateGoals = (req,res) => {
+export const updateGoals = asyncHandler(async(req,res) => {
     res.status(200).json(posts)
-}
+})
 
 // @desc remove goals
 // @route DELETE /api/goals
 // @access private 
-export const removeGoals = (req,res) => {
+export const removeGoals = asyncHandler(async(req,res) => {
     res.status(200).json(posts)
-}
+})
 
 
 // export default {getGoals,setGoals, updateGoals, removeGoals}
