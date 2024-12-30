@@ -1,13 +1,6 @@
 import asyncHandler from "express-async-handler"
 import Goal from "../model/goalModel.js"
-const posts = [
-    {
-        name: "Cooper"
-    },
-    {
-        name: "Rakesh"
-    }
-]
+
 
 // @desc get goals
 // @route GET /api/goals

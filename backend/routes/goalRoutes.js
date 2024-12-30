@@ -1,5 +1,9 @@
 import express from "express"
-import { getGoals,setGoals, updateGoals, removeGoals } from "../controllers/goalController.js"
+import { 
+    getGoals,
+    setGoals, 
+    updateGoals, 
+    removeGoals } from "../controllers/goalController.js"
 const router = express.Router()
 
 router.route('/').get(getGoals).post(setGoals)
