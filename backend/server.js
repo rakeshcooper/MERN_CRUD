@@ -4,8 +4,8 @@ import errorhandler from "./middleware/errorMiddleware.js"
 import connectDB from "./config/db.js"
 import dotenv  from "dotenv"
 dotenv.config()
-import router from "./routes/goalRoutes.js"
-
+import goalrouter from "./routes/goalRoutes.js"
+// import userrouter from "./routes/userRoutes.js"
 
 const port = process.env.PORT || 5000
 
@@ -18,7 +18,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 // routes
-app.use('/api/goals',router)
+app.use('/api/goals',goalrouter)
+// app.use('/api/users',userrouter)
 
 //error handler
 app.use(errorhandler)
