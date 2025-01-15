@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import { reset } from 'colors'
+
 
 // Get user from local storage
 const user = JSON.parse(localStorage.getItem('user'))
@@ -13,9 +13,9 @@ const initialState = {
 }
 
 export const authSlice = createSlice({
-    name: '',
+    name: 'auth',
     initialState,
-    reducers : {
+     reducers : {
         reset: (state) => {
             state.isError = false,
             state.isSuccess = false,
@@ -27,5 +27,5 @@ export const authSlice = createSlice({
 })
 
 
-export const {reset} = authSlice.actions
+export const { reset } = authSlice.actions
 export default authSlice.reducer
